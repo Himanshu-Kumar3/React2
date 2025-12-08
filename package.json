@@ -1,0 +1,31 @@
+{
+  "name": "react2",
+  "version": "1.0.0",
+  "description": "This is a react package",
+  "homepage": "https://github.com/Himanshu-Kumar3/React2#readme",
+  "bugs": {
+    "url": "https://github.com/Himanshu-Kumar3/React2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himanshu-Kumar3/React2.git"
+  },
+  "license": "ISC",
+  "author": "Himanshu Kumar",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "browserList":[
+    "last 2 chrome version",
+    "last 2 fire fox version",
+    "last 2 versions"
+  ]
+}
