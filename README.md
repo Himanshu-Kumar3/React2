@@ -20,3 +20,19 @@ this is a repo for react class
 - Tree shaking :- Remove unused code
 - Different dev and prod bundles
 
+
+
+# App Layout
+/**
+ * Head
+ * - logo
+ * - nav-list
+ * Body
+ * - search
+ * - rest-cards-container
+ *   - rest-cards
+ * Footer
+ * - copyright
+ * - links 
+ * - adresses
+ */

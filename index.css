@@ -41,7 +41,7 @@
 }
 .card{
     width:193px;
-    height:350px;
+    /* height:350px; */
     /* border: 1px solid black; */
     padding:5px;
     margin:5px;
@@ -60,4 +60,10 @@
     width:100%;
     border-radius: 10px;
     height:150px
+}
+
+.filter-btn{
+margin:10px;
+padding:4px;
+cursor: pointer;
 }
