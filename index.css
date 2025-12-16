@@ -67,3 +67,56 @@ margin:10px;
 padding:4px;
 cursor: pointer;
 }
+
+
+/* For Shimmer  */
+
+.shimmer-container{
+    display:flex;
+     flex-wrap: wrap;
+}
+.shimmer-card{
+    width:193px;
+    height:350px;
+    /* border: 1px solid black; */
+    padding:5px;
+    margin:5px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+/* Login Button  */
+.login-btn{
+    height:50px;
+    width:100px;
+    font-size: 1.1rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+
+
+/* Search btn */
+.filter{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.searchContainer{
+    padding-right:5px;
+    
+}
+.search-box{
+    height:30px;
+    width:250px;
+    margin:5px;
+}
+
+.searchBtn{
+    height:35px;
+    width:100px;
+    font-size: 1rem;
+    cursor: pointer;
+}
