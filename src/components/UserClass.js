@@ -3,35 +3,39 @@ import React from "react";
 class UserClass extends React.Component {
     constructor(props){
         super(props);
-
-
         this.state ={
-            count:0,
-            count2:2
+            userInfo:{
+                name:"Dummy Name",
+                location:"Default"
+            }
         };
     }
+    async componentDidMount(){
+        // Used similiar as useEffect Hooks
+        const data =await fetch("https://api.github.com/users/Himanshu-Kumar3") ;
+        const json = await data.json();
+        console.log(json);
+
+    
+        this.setState({
+            userInfo : json
+        })
+        
+    }
+
+    componentDidUpdate(){
+        console.log("Component Did Update");
+
+    }
+    componentWillUnmount(){
+        console.log("Component Will unmount  ");
+    }
     render(){
-        const {count , count2} = this.state;
+        const {name , location} = this.state.userInfo;
         return(
        <div className="user-card">
-        <h3>count : {count}</h3>
-         <h3>count : {count2}</h3>
-
-         <button className="btn-update " onClick={ ()=>{
-            // Never update the State variable directly
-
-            // It only updates / change the var which in inside the seState and doesn't touch the remaining
-            this.setState({
-                count:count+1
-            });
- 
-            }
-         }>
-            Increase Button
-         </button>
-        <h3>{this.props.name}</h3>
-        <h3>{this.props.location}</h3>
-        <h3>{this.props.linkdin}</h3>
+        <h3>{name}</h3>
+        <h3>{location}</h3>
        </div>
     );
     }
