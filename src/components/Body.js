@@ -41,32 +41,35 @@ const Body = ()=>{
       <div className="body">
 
 
-         <div className="filter">
-            <div className="searchContainer">
+         <div className="filter m-4 p-4 flex items-center ">
+          <div className="searchContainer ">
             <input 
              type="text"  
-             className="search-box" 
+             className="search-box border border-solid border-black w-60 h-8" 
              value={searchText} 
              onChange={(e)=>{
                setSearchText(e.target.value);
              }}>  
              </input>
-            <button className="searchBtn" onClick={()=>{
+            <button className="searchBtn bg-green-100 w-20 h-10 mx-8 rounded-lg" onClick={()=>{
                const filteredList = listOfRestaurant.filter((res)=>{
                   return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                   }); 
                // console.log(filteredList);
                setFilteredRestaurant(filteredList);
             }}> Search</button>
-         </div>
-
-         <button className="filter-btn" onClick ={()=>{
+          </div>
+          <div className="topRated mx-40">
+            <button className="filter-btn bg-gray-200 w-60 h-10 rounded-md text-lg font-normal" onClick ={()=>{
              const filterList = listOfRestaurant.filter((rest)=> rest.info.avgRating > 4);
              setFilteredRestaurant(filterList);
             }} >Top Rated Restaurant</button>
+          </div>
+
+            
          </div>
 
-         <div className="res-card-container">
+         <div className="res-card-container flex flex-wrap">
             {/* everytime it iterate into the list element -> obj , pass that obj to the ResCard component as props -> argument and also key */}
             {filteredRestaurant.map((restaurant) =>(
                  <Link key={restaurant.info.id} to={"restaurant/"+restaurant.info.id}><ResCard  resData = {restaurant} /></Link> 

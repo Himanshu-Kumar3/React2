@@ -9,18 +9,30 @@ const Header = ()=>{
 
     
   return (    
-      <div className="head">
-            <div className="logo">
-              <img className="logo-img" alt="logo-img"src={LOGO_URL}/>
+      <div className=" header flex justify-between bg-pink-100 shadow-lg">
+            <div className="logo px-4">
+              <img className=" w-30 " alt="logo-img"src={LOGO_URL}/>
             </div>
             <div className="nav-links">
-             <ul>
-              <li>Online Status : {onlineStatus ? "🟢":"🔴"}</li>
-               <li><Link to="/" className="nav-link">Home</Link></li>
-               <li><Link to="/contact" className="nav-link">Contact us</Link></li>
-               <li><Link to="/about" className="nav-link">About</Link></li>
-               <li>Cart</li>
-               <li><Link to="/grocery" className="nav-link">Grocery</Link></li>
+             <ul className="flex p-4 m-4 items-center text-xl">
+              <li className="px-4">
+                Online Status : {onlineStatus ? "🟢":"🔴"}
+              </li>
+              <li className="nav-link px-4">
+                <Link to="/" >Home</Link>
+              </li>
+              <li className="nav-link px-4">
+                <Link to="/contact" >Contact us</Link>
+              </li>
+              <li className="nav-link px-4">
+                <Link to="/about" >About</Link>
+              </li>
+              <li className="px-4">
+                Cart
+              </li>
+              <li className="nav-link px-4">
+                <Link to="/grocery" >Grocery</Link>
+              </li>
                <button className="login-btn" onClick={()=>{
                 ChangeloginBtn== "Login" ? setChangeLoginBtn("Logout"):setChangeLoginBtn("Login")
                }}>{ChangeloginBtn}</button>
