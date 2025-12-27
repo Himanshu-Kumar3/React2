@@ -9,9 +9,9 @@ const Header = ()=>{
 
     
   return (    
-      <div className=" header flex justify-between bg-pink-100 shadow-lg">
+      <div className=" header h-24  sticky top-0 flex justify-between bg-pink-50 shadow-lg z-1">
             <div className="logo px-4">
-              <img className=" w-30 " alt="logo-img"src={LOGO_URL}/>
+              <img className=" w-24  h-24" alt="logo-img"src={LOGO_URL}/>
             </div>
             <div className="nav-links">
              <ul className="flex p-4 m-4 items-center text-xl">
