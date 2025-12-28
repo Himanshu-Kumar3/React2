@@ -9,7 +9,7 @@ const Header = ()=>{
 
     
   return (    
-      <div className=" header h-24  sticky top-0 flex justify-between bg-pink-50 shadow-lg z-1">
+      <div className=" header h-24  sticky top-0 flex justify-between bg-pink-50 shadow-lg z-2">
             <div className="logo px-4">
               <img className=" w-24  h-24" alt="logo-img"src={LOGO_URL}/>
             </div>

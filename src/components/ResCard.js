@@ -21,6 +21,7 @@ const ResCard =(props)=>{ // we can also do destructuring in place of props
 export const withDiscountLabel = (ResCard)=>{
 
    return (props)=>{
+      console.log("Nested: ",props);
    const {resData} = props ;
       const {aggregatedDiscountInfoV3 : {header , subHeader}} = resData?.info
      return(
