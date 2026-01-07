@@ -7,26 +7,28 @@ import { useState } from "react";
 
 
 const RestaurantMenu = ()=>{
+    // custom Hooks
     const {resId} = useParams();
     const resInfo = useRestaurantMenu(resId);
+    // state variable:-
     const [showIndex , setShowIndex] = useState(0);
     console.log("ShowIndex" ,showIndex);
 
     if (resInfo === null) return <Shimmer/>;
 
      const {name , cuisines } = resInfo?.data.cards[2]?.card?.card?.info;
-     console.log(resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-     const card = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    //  console.log(resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+    //  const card = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
      
     //  Get the itemCard :-
-    const {itemCards} = card || {};
-    const finalItemCards = itemCards ?? card?.categories?.[0]?.itemCards;
-    console.log(finalItemCards);
+    // const {itemCards} = card || {};
+    // const finalItemCards = itemCards ?? card?.categories?.[0]?.itemCards;
+    // console.log(finalItemCards);
 
 
 
     const allowedType = ["type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory" , "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"];
-    const categories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=>{
+    const categories =  resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=>{
         return allowedType.includes(category?.card?.card?.["@type"]);
     });
     console.log(categories);
@@ -42,7 +44,7 @@ const RestaurantMenu = ()=>{
             return <RestaurantCategory
             key={category?.card?.card?.categoryId} data={category?.card?.card} 
            showItems ={index === showIndex ? true : false}
-           setShowIndex={()=>setShowIndex(index)}/>})}
+           setShowIndex={()=>setShowIndex(showIndex === index ? null : index)}/>})}
 
            
         </div>

@@ -2,15 +2,13 @@ import {  ITEM_TYPE , NESTED_ITEM } from "../utils/constant";
 import ItemList from "./ItemList";
 import {useState} from "react";
 
-const RestaurantCategory = (props , )=>{
-    // console.log("Sh" ,props.showItems);
+// const [showItems , setShowItems] = useState(false);
+const RestaurantCategory = (props)=>{ 
     const {data , showItems ,setShowIndex} = props;
     const type = data?.["@type"];
-    // const [showItems , setShowItems] = useState(false);
     const handleClick = ()=>{
         // setShowItems(!showItems);
         setShowIndex();
-
     }
   
     return(

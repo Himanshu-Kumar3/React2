@@ -2,6 +2,8 @@ import { ITEM_TYPE ,NESTED_ITEM  , CDN_URL} from "../utils/constant";
 import RestaurantCategory from "./RestaurantCategory";
 import {useState} from "react";
 import GetCardData from "./GetCardData";
+
+
 const ItemList = (props) =>{
 
 
@@ -9,6 +11,7 @@ const ItemList = (props) =>{
   const type = itemData?.["@type"];
 
  const [showItemsById , setShowItemsById] = useState(null);
+ 
  const handleClick = (categoryId)=>{
           setShowItemsById(prev => prev === categoryId ? null : categoryId);
           console.log(showItemsById);
@@ -28,10 +31,10 @@ const ItemList = (props) =>{
             <div>
                 {itemData?.categories.map((category)=>{
                     return(
-                        <div key={category.categoryId} className="text-left border-b border-gray-500 z-1">
-                            <div className="flex justify-between cursor-pointer py-2"  onClick={()=>handleClick(category.categoryId)}>
+                        <div key={category.categoryId} className="nested-menu text-left border-b border-gray-500 z-1">
+                            <div className="heading flex justify-between cursor-pointer py-2"  onClick={()=>handleClick(category.categoryId)}>
                                 <span className="font-bold py-2 border-b border-gray-400">{category.title} ({category?.itemCards.length})</span>
-                                <span>⬇️</span>
+                                <span>{showItemsById === category.categoryId ?  "▼":"▲" }</span>
                             </div>
                              {showItemsById === category.categoryId && (<GetCardData  data={category?.itemCards}/>)}
                         </div>

@@ -1,11 +1,14 @@
 import { LOGO_URL } from "../utils/constant";
-import { useState } from "react";
+import { useState  , useContext} from "react";
 import {Link} from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 // Head :-
 const Header = ()=>{
   const [ChangeloginBtn , setChangeLoginBtn] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);  // 
+  console.log(loggedInUser);
 
     
   return (    
@@ -36,6 +39,10 @@ const Header = ()=>{
                <button className="login-btn" onClick={()=>{
                 ChangeloginBtn== "Login" ? setChangeLoginBtn("Logout"):setChangeLoginBtn("Login")
                }}>{ChangeloginBtn}</button>
+
+               <li className="nav-link px-4">
+                <Link to="/grocery" >{loggedInUser}</Link>
+              </li>
              </ul>
             </div>
          </div>

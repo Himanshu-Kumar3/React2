@@ -49,7 +49,7 @@ const Body = ()=>{
                const filteredList = listOfRestaurant.filter((res)=>{
                   return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                   }); 
-               // console.log(filteredList);
+               console.log(filteredList);
                setFilteredRestaurant(filteredList);
             }}> Search</button>
           </div>
@@ -66,7 +66,7 @@ const Body = ()=>{
             {filteredRestaurant.map((restaurant) =>(
                  <Link key={restaurant?.info?.id} to={"restaurant/"+restaurant?.info?.id}>
                   {restaurant?.info?.aggregatedDiscountInfoV3 ? <RestaurantWithDiscount resData= {restaurant}/> :<ResCard  resData = {restaurant} />}
-                  
+                
                   </Link> 
              ))}
 
