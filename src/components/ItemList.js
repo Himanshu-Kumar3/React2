@@ -33,7 +33,7 @@ const ItemList = (props) =>{
                     return(
                         <div key={category.categoryId} className="nested-menu text-left border-b border-gray-500 z-1">
                             <div className="heading flex justify-between cursor-pointer py-2"  onClick={()=>handleClick(category.categoryId)}>
-                                <span className="font-bold py-2 border-b border-gray-400">{category.title} ({category?.itemCards.length})</span>
+                                <span className="font-bold py-2 ">{category.title} ({category?.itemCards.length})</span>
                                 <span>{showItemsById === category.categoryId ?  "▼":"▲" }</span>
                             </div>
                              {showItemsById === category.categoryId && (<GetCardData  data={category?.itemCards}/>)}

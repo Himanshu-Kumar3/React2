@@ -1,13 +1,12 @@
 import ResCard ,{withDiscountLabel} from "../components/ResCard";
-import { use, useEffect, useState } from "react";
+import { use, useEffect, useState , useContext } from "react";
 import {Link } from "react-router";
 
 import Shimmer from "./Shimmer";
 import { RESTAURANT_URL } from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurant from "../utils/useRestaurant";
-
-
+import UserContext from "../utils/UserContext";
 
 // Body :-
    // not using keys(Not acceptable) <<<<< index as key <<<<<<<<<<<<<<<<<<<<<<< unique id (Best practice :) )
@@ -27,12 +26,16 @@ const Body = ()=>{
 
     const RestaurantWithDiscount = withDiscountLabel(ResCard);
 
-
+   const { loggedInUser,setUserName} = useContext(UserContext);
+//   console.log(loggedInUser);
   const onlineStatus = useOnlineStatus();
+
   if (onlineStatus == false){
    return (<h2>Looks Like You're Offline ! Please check your internet connection :( </h2>);
   }
- 
+
+
+
    return listOfRestaurant.length === 0? (<Shimmer/>): (
       <div className="body">
          <div className="filter h-24 m-4 p-4 flex items-center  ">
@@ -49,7 +52,7 @@ const Body = ()=>{
                const filteredList = listOfRestaurant.filter((res)=>{
                   return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                   }); 
-               console.log(filteredList);
+               // console.log(filteredList);
                setFilteredRestaurant(filteredList);
             }}> Search</button>
           </div>
@@ -59,9 +62,18 @@ const Body = ()=>{
              setFilteredRestaurant(filterList);
             }} >Top Rated Restaurant</button>
           </div> 
+
+          <div>
+            <label className="text-xl">Update User : </label>
+            <input className="updateContext border border-black  p-2" 
+             value={loggedInUser}
+             onChange={(e)=> setUserName(e.target.value) }
+             />
+          </div>
          </div>
 
-         <div className="res-card-container flex flex-wrap">
+
+         <div className="res-card-container flex flex-wrap ml-14">
             {/* everytime it iterate into the list element -> obj , pass that obj to the ResCard component as props -> argument and also key */}
             {filteredRestaurant.map((restaurant) =>(
                  <Link key={restaurant?.info?.id} to={"restaurant/"+restaurant?.info?.id}>

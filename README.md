@@ -36,3 +36,18 @@ this is a repo for react class
  * - links 
  * - adresses
  */
+
+
+
+ # Routing
+  - server side routing
+  - client side routing
+  
+# Redux 
+  - install @redux/toolkit and react-redux
+  - build our store
+  - connect to the store (react-redux)
+  - create slice (cart slice)
+  - dispatch (action)
+  - selector (subscribing to the store)
+  

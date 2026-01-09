@@ -32,13 +32,14 @@ class UserClass extends React.Component {
     }
     render(){
         const {name , location} = this.state.userInfo;
+        const data = "ravi"
         return(
        <div className="user-card">
         <h3>{name}</h3>
         <h3>{location}</h3>
         LoggedIn User :
-        <UserContext.Consumer> {/* byDefault component that is used to to get context data */}
-            {({loggedInUser})=><h3 className="login  text-xl font-bold">{loggedInUser}</h3>}
+        <UserContext.Consumer> 
+            {(data)=><h3 className="login  text-xl font-bold">{data.loggedInUser}</h3>}
         </UserContext.Consumer>
         
        </div>
