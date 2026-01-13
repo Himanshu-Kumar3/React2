@@ -51,3 +51,19 @@ this is a repo for react class
   - dispatch (action)
   - selector (subscribing to the store)
   
+# Testing :
+ - Unit Testing
+ - Integration testing
+ - e2e testing (end-to-end)
+
+# Setting up testing in our app 
+ - install @testing/library-react
+ - install jest
+ - install babel and some additional 
+ - configure babel - babel.config.js  in root  file -> copy and paste
+ - configure parcel config file   to disable the default babel transpilation
+ - configure jest - npm init jest@latest
+ - install jsdom library
+ - install preset -> npm i -D @babel/preset-react -> so that jsx code  in the test file can be transpiled
+ - install @testing-library/jest-dom -> npm i -D @testing-library/jest-dom
+ - npm install --save-dev @types/testing-library__jest-dom -> For intellisence in the testFile after expect().
