@@ -13,7 +13,7 @@ const useRestaurantMenu = (resId)=>{
       try{
         const data = await fetch(MENU_URL + resId);
         const json = await data.json();
-        console.log(json?.data);
+        // console.log(json?.data);
         setResInfo(json);
         }catch(er){
             console.log("ERROR: " , er);

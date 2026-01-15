@@ -6,12 +6,13 @@ import UserContext from "../utils/UserContext";
 
 const ResCard =(props)=>{ // we can also do destructuring in place of props
    const {resData} = props ;
+   // console.log(resData);
    // Destructure of the resData :-
    const {name , cuisines , avgRatingString , costForTwo , sla} = resData?.info;
 
    const {loggedInUser} = useContext(UserContext);
    return(
-      <div className="ResCard p-2 m-4 w-70 h-95 bg-gray-100 flex  flex-col flex-wrap hover:bg-gray-200 hover: rounded-lg">
+      <div data-testid="resCard" className="ResCard p-2 m-4 w-70 h-95 bg-gray-100 flex  flex-col flex-wrap hover:bg-gray-200 hover: rounded-lg">
          <img className="card-img h-41 w-69 rounded-lg shadow-lg   to-transparent"alt="Card-img"src= {CDN_URL + resData.info.cloudinaryImageId}/>
          <h3 className="text-lg font-medium py-3">{name}</h3>
          <h4 className="font-medium"> {avgRatingString} stars</h4>

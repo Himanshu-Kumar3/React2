@@ -9,7 +9,7 @@ const {data} = props;
 const dispatch = useDispatch(); // function from the useDispatch() hook
 // To update the store -> dispatch
 const handleAddItem = (item)=>{
-console.log(item);
+// console.log(item);
 dispatch(addItem(item))  
 // behind the scene when we dispatch an action -> addItem("Burger") ->
  /*
@@ -24,7 +24,7 @@ dispatch(addItem(item))
   <div>
     {data.map((item)=>{
       // console.log(item);
-        return <div key={item?.card?.info?.id} className="Menu-card-type flex justify-between relative  my-2 pt-4  border-gray-400 shadow-md border-b-2">
+        return <div key={item?.card?.info?.id} data-testid ="foodItems" className="Menu-card-type flex justify-between relative  my-2 pt-4  border-gray-400 shadow-md border-b-2">
              <div className="title w-3/4 text-left">
                  <h2 className="font-bold text-md px-4">{item?.card?.info?.name} - ₹ {item?.card?.info?.price ? item?.card?.info?.price /100 : item?.card?.info?.defaultPrice/100}</h2>
                  <h3 className="font-bold px-4"> {item?.card?.info?.ratings?.aggregatedRating?.rating} </h3>

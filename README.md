@@ -62,7 +62,7 @@ this is a repo for react class
  - install babel and some additional 
  - configure babel - babel.config.js  in root  file -> copy and paste
  - configure parcel config file   to disable the default babel transpilation
- - configure jest - npm init jest@latest
+ - configure jest - npm init jest@latest  ->installed and in jest.config.js ->testEnvironment: "jest-fixed-jsdom" 
  - install jsdom library
  - install preset -> npm i -D @babel/preset-react -> so that jsx code  in the test file can be transpiled
  - install @testing-library/jest-dom -> npm i -D @testing-library/jest-dom

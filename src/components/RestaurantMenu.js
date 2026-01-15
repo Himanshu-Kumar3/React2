@@ -12,7 +12,7 @@ const RestaurantMenu = ()=>{
     const resInfo = useRestaurantMenu(resId);
     // state variable:-
     const [showIndex , setShowIndex] = useState(0);
-    console.log("ShowIndex" ,showIndex);
+    // console.log("ShowIndex" ,showIndex);
 
     if (resInfo === null) return <Shimmer/>;
 
@@ -31,7 +31,7 @@ const RestaurantMenu = ()=>{
     const categories =  resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=>{
         return allowedType.includes(category?.card?.card?.["@type"]);
     });
-    console.log(categories);
+    // console.log(categories);
  
     return (
         <div className="restauarant-menu mx-auto text-center">
@@ -40,7 +40,7 @@ const RestaurantMenu = ()=>{
            {/* {resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map()} */}
 
            {categories.map((category, index)=>{
-            console.log(index);
+            // console.log(index);
             return <RestaurantCategory
             key={category?.card?.card?.categoryId} data={category?.card?.card} 
            showItems ={index === showIndex ? true : false}

@@ -13,7 +13,7 @@ import UserContext from "../utils/UserContext";
 const Body = ()=>{
     // Local useState Variable = superPowerFul state variable : for this we use : "useSatate() :- Hook"
     const [filteredRestaurant , setFilteredRestaurant] = useState([]); // copy of original // for changes to be done in original data
-    const [searchText , setSearchText] = useState("")
+    const [searchText , setSearchText] = useState("");
 
 
    const listOfRestaurant = useRestaurant();
@@ -41,6 +41,7 @@ const Body = ()=>{
          <div className="filter h-24 m-4 p-4 flex items-center  ">
           <div className="searchContainer ">
             <input 
+            data-testid = "searchInput"
              type="text"  
              className="search-box border border-solid rounded-md border-black w-60 h-8" 
              value={searchText} 
